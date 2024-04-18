@@ -1,4 +1,4 @@
-def write_docker_command(password, container, target, path, image="image", username="analislas"):
+def write_docker_command(password, container, target, path, image, username="analislas"):
     return f'docker run \
     --env BITBUCKET_PASSWORD={password} \
     --env BITBUCKET_USERNAME={username} \
