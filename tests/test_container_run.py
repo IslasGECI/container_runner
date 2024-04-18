@@ -22,7 +22,9 @@ def test_write_docker_command():
 
     password = "new_password"
     username = "new_username"
-    obtained = write_docker_command(password, container, target, username)
+    path = "new_path"
+    obtained = write_docker_command(password, container, target, path, username)
     assert username in obtained
     assert password in obtained
     assert target in obtained
+    assert path in obtained
