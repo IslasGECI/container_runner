@@ -3,13 +3,13 @@ from container_runner import write_docker_command
 
 def test_write_docker_command():
     password = "password"
-    container = "new_container"
+    container = "$CONTENEDOR"
     target = "$OBJETIVO"
     path = "$RUTA_CLON"
     expected = 'docker run \
     --env BITBUCKET_PASSWORD=password \
     --env BITBUCKET_USERNAME=analislas \
-    --name new_container \
+    --name $CONTENEDOR \
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume $RUTA_CLON:/workdir \
