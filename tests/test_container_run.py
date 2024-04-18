@@ -19,9 +19,7 @@ def test_write_docker_command():
     assert obtained == expected
 
     password_2 = "new_password"
-    obtained = write_docker_command(password_2)
-    assert password_2 in obtained
-
     username = "new_username"
-    obtained = write_docker_command(password, username)
+    obtained = write_docker_command(password_2, username)
     assert username in obtained
+    assert password_2 in obtained
