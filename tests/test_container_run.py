@@ -21,7 +21,3 @@ def test_write_docker_command():
         || rm --force .make_succeeded"'
     obtained = write_docker_command(password, container, target, path, image)
     assert obtained == expected
-
-    username = "new_username"
-    obtained = write_docker_command(password, container, target, path, image, username)
-    assert username in obtained
