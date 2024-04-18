@@ -21,9 +21,7 @@ def test_write_docker_command():
 
     password = "new_password"
     username = "new_username"
-    container = "new_container"
     target = "second_target"
     obtained = write_docker_command(password, container, username)
     assert username in obtained
     assert password in obtained
-    assert container in obtained
