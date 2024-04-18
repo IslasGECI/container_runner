@@ -14,7 +14,7 @@ all: check coverage mutants
 		tests
 
 module = container_runner
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+codecov_token = bf3feb58-ccd6-41c7-b729-2b4b7fa7c628
 
 define lint
 	pylint \
