@@ -6,6 +6,7 @@ def test_write_docker_command():
     container = "$CONTENEDOR"
     target = "$OBJETIVO"
     path = "$RUTA_CLON"
+    image = "$IMAGEN"
     expected = 'docker run \
     --env BITBUCKET_PASSWORD=password \
     --env BITBUCKET_USERNAME=analislas \
@@ -13,17 +14,16 @@ def test_write_docker_command():
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume $RUTA_CLON:/workdir \
-    image bash -c "\
+    $IMAGEN bash -c "\
       umask 000; \
       make $OBJETIVO \
         && echo $(date) > .make_succeeded \
         || rm --force .make_succeeded"'
-    obtained = write_docker_command(password, container, target, path)
+    obtained = write_docker_command(password, container, target, path, image)
     assert obtained == expected
 
     password = "new_password"
     username = "new_username"
-    image = "$IMAGEN"
     obtained = write_docker_command(password, container, target, path, image, username)
     assert username in obtained
     assert password in obtained
