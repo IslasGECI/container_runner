@@ -20,6 +20,8 @@ def test_write_docker_command():
 
     password_2 = "new_password"
     username = "new_username"
-    obtained = write_docker_command(password_2, username)
+    container = "new_container"
+    obtained = write_docker_command(password_2, container, username)
     assert username in obtained
     assert password_2 in obtained
+    assert container in obtained
