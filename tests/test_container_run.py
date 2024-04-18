@@ -19,5 +19,5 @@ def test_write_docker_command():
       make $OBJETIVO \
         && echo $(date) > .make_succeeded \
         || rm --force .make_succeeded"'
-    obtained = write_docker_command(password, container, target, path, image)
+    obtained = write_docker_command(container, target, path, image, password)
     assert obtained == expected
