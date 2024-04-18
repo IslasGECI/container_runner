@@ -1,4 +1,4 @@
-def write_docker_command():
+def write_docker_command(password):
     return 'docker run \
     --env BITBUCKET_PASSWORD=password \
     --env BITBUCKET_USERNAME=username \
