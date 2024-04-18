@@ -1,4 +1,4 @@
-"""A template Python module"""
+"""Runner of containers module"""
 
-__version__ = "0.4.0"
+__version__ = "0.0.1"
 from .transformations import add_offset  # noqa
