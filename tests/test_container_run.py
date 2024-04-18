@@ -5,7 +5,7 @@ def test_write_docker_command():
     password = "password"
     expected = 'docker run \
     --env BITBUCKET_PASSWORD=password \
-    --env BITBUCKET_USERNAME=username \
+    --env BITBUCKET_USERNAME=analislas \
     --name container \
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
