@@ -22,7 +22,6 @@ def test_write_docker_command():
     obtained = write_docker_command(password, container, target, path, image)
     assert obtained == expected
 
-    password = "new_password"
     username = "new_username"
     obtained = write_docker_command(password, container, target, path, image, username)
     assert username in obtained
