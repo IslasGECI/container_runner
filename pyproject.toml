@@ -10,5 +10,6 @@ description-file = "README.md"
 home-page = "https://github.com/IslasGECI/container_runner"
 module = "container_runner"
 requires = [
+	"typer[all]"
 ]
 requires-python=">=3.9"
