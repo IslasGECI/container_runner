@@ -2,13 +2,13 @@ from container_runner import write_docker_command
 
 
 def test_write_docker_command():
-    password = "password"
+    password = "$BITBUCKET_PASSWORD"
     container = "$CONTENEDOR"
     target = "$OBJETIVO"
     path = "$RUTA_CLON"
     image = "$IMAGEN"
     expected = 'docker run \
-    --env BITBUCKET_PASSWORD=password \
+    --env BITBUCKET_PASSWORD=$BITBUCKET_PASSWORD \
     --env BITBUCKET_USERNAME=analislas \
     --name $CONTENEDOR \
     --rm \
