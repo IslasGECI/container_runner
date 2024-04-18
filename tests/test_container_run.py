@@ -5,14 +5,14 @@ def test_write_docker_command():
     password = "password"
     container = "new_container"
     target = "$OBJETIVO"
-    path = "new_path"
+    path = "$RUTA_CLON"
     expected = 'docker run \
     --env BITBUCKET_PASSWORD=password \
     --env BITBUCKET_USERNAME=analislas \
     --name new_container \
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume new_path:/workdir \
+    --volume $RUTA_CLON:/workdir \
     image bash -c "\
       umask 000; \
       make $OBJETIVO \
