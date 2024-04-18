@@ -1,4 +1,4 @@
-def write_docker_command(password, container, target, path, username="analislas"):
+def write_docker_command(password, container, target, path, image="image", username="analislas"):
     return f'docker run \
     --env BITBUCKET_PASSWORD={password} \
     --env BITBUCKET_USERNAME={username} \
@@ -6,7 +6,7 @@ def write_docker_command(password, container, target, path, username="analislas"
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume {path}:/workdir \
-    image bash -c "\
+    {image} bash -c "\
       umask 000; \
       make {target} \
         && echo $(date) > .make_succeeded \
