@@ -2,10 +2,12 @@ from container_runner import write_docker_command
 
 
 def test_write_docker_command():
+    password = "password"
+    container = "new_container"
     expected = 'docker run \
     --env BITBUCKET_PASSWORD=password \
     --env BITBUCKET_USERNAME=analislas \
-    --name container \
+    --name new_container \
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume path:/workdir \
@@ -14,11 +16,14 @@ def test_write_docker_command():
       make target \
         && echo $(date) > .make_succeeded \
         || rm --force .make_succeeded"'
+    obtained = write_docker_command(password, container)
+    assert obtained == expected
 
-    password_2 = "new_password"
+    password = "new_password"
     username = "new_username"
     container = "new_container"
-    obtained = write_docker_command(password_2, container, username)
+    target = "second_target"
+    obtained = write_docker_command(password, container, username)
     assert username in obtained
-    assert password_2 in obtained
+    assert password in obtained
     assert container in obtained
