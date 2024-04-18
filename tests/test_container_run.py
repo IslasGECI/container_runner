@@ -2,6 +2,7 @@ from container_runner import write_docker_command
 
 
 def test_write_docker_command():
+    password = "password"
     expected = 'docker run \
     --env BITBUCKET_PASSWORD=password \
     --env BITBUCKET_USERNAME=username \
@@ -14,5 +15,5 @@ def test_write_docker_command():
       make target \
         && echo $(date) > .make_succeeded \
         || rm --force .make_succeeded"'
-    obtained = write_docker_command()
+    obtained = write_docker_command(password)
     assert obtained == expected
