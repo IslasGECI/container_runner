@@ -1,6 +1,6 @@
 def write_docker_command(password):
-    return 'docker run \
-    --env BITBUCKET_PASSWORD=password \
+    return f'docker run \
+    --env BITBUCKET_PASSWORD={password} \
     --env BITBUCKET_USERNAME=username \
     --name container \
     --rm \
