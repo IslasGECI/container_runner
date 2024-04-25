@@ -13,7 +13,8 @@ def test_run_container():
     image = "islasgeci/hola"
     container = "testmake_hola_develop"
     target = "mundo"
-    path = "~/.testmake/hola"
+    path = "./hola/"
+    password = "contraseña"
     result = runner.invoke(
         cli,
         [
