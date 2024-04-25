@@ -16,3 +16,5 @@ jobs:
       run: container_runner --help
     - name: Clone repo
       run: git clone https://${{ secrets.BITBUCKET_USERNAME }}:${{ secrets.BITBUCKET_PASSWORD }}@bitbucket.org/IslasGECI/hola.git
+    - name: Make mundo within hola
+      run: docker run --volume ./hola/:/workdir islasgeci/hola make mundo
