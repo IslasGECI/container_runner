@@ -12,9 +12,13 @@ jobs:
       uses: actions/checkout@main
     - name: Install cli
       run: make install
-    - name: Get cli help
+    - name: Get container_runner CLI help
       run: container_runner --help
     - name: Clone repo
       run: git clone https://${{ secrets.BITBUCKET_USERNAME }}:${{ secrets.BITBUCKET_PASSWORD }}@bitbucket.org/IslasGECI/hola.git
     - name: Make mundo within hola
       run: docker run --volume ./hola/:/workdir islasgeci/hola make mundo
+    - name: Remove mundo. Last set up step
+      run: rm ./hola/mundo
+    - name: Test run-container command
+      run: container_runner run-container --image "islasgeci/hola" --target "mundo" --path "./hola/" --container "testmake_hola_develop" --password "contraseña"
