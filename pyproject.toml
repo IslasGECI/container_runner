@@ -13,3 +13,6 @@ requires = [
 	"typer[all]"
 ]
 requires-python=">=3.9"
+
+[tool.flit.scripts]
+container_runner = "container_runner.cli:cli"
