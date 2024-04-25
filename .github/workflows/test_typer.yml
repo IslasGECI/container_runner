@@ -12,5 +12,7 @@ jobs:
       uses: actions/checkout@main
     - name: Install cli
       run: make install
-    - name: Get help
+    - name: Get cli help
       run: container_runner --help
+    - name: Get docker help
+      run: docker run hello-world
