@@ -22,3 +22,5 @@ jobs:
       run: rm ./hola/mundo
     - name: Test run-container command
       run: container_runner run-container --image "islasgeci/hola" --target "mundo" --path "./hola/" --container "testmake_hola_develop" --password "contraseña"
+    - name: Test container_runner CLI
+      run: pytest --verbose tests/test_cli.py
