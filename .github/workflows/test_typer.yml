@@ -14,5 +14,5 @@ jobs:
       run: make install
     - name: Get cli help
       run: container_runner --help
-    - name: Get docker help
-      run: docker run hello-world
+    - name: Clone repo
+      run: git clone https://${{ secrets.BITBUCKET_USERNAME }}:${{ secrets.BITBUCKET_PASSWORD }}@bitbucket.org/IslasGECI/hola.git
