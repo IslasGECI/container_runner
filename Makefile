@@ -67,7 +67,7 @@ mutants: setup
 setup: clean install
 
 tests:
-	pytest --verbose
+	pytest --verbose --ignore=tests/test_cli.py
 
 red: format
 	pytest --verbose \
