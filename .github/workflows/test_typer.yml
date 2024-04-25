@@ -1,0 +1,14 @@
+name: Test typer
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  test-typer:
+    name: Test typer
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@main
+    - name: Install cli
+      run: make install
