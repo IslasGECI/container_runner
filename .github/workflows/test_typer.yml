@@ -12,3 +12,5 @@ jobs:
       uses: actions/checkout@main
     - name: Install cli
       run: make install
+    - name: Get help
+      run: container_runner --help
