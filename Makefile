@@ -70,19 +70,19 @@ tests:
 	pytest --verbose --ignore=tests/test_cli.py
 
 red: format
-	pytest --verbose \
+	pytest --verbose --ignore=tests/test_cli.py \
 	&& git restore tests/*.py \
 	|| (git add tests/*.py && git commit -m "🛑🧪 Fail tests")
 	chmod g+w -R .
 
 green: format
-	pytest --verbose \
+	pytest --verbose --ignore=tests/test_cli.py \
 	&& (git add ${module}/*.py tests/*.py && git commit -m "✅ Pass tests") \
 	|| git restore ${module}/*.py
 	chmod g+w -R .
 
 refactor: format
-	pytest --verbose \
+	pytest --verbose --ignore=tests/test_cli.py \
 	&& (git add ${module}/*.py tests/*.py && git commit -m "♻️  Refactor") \
 	|| git restore ${module}/*.py tests/*.py
 	chmod g+w -R .
