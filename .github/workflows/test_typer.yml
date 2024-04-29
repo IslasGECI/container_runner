@@ -11,7 +11,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@main
     - name: Install cli
-      run: make install
+      run: make install && pip install pytest
     - name: Get container_runner CLI help
       run: container_runner --help
     - name: Clone repo
