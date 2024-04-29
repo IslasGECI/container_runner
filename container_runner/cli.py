@@ -12,8 +12,9 @@ def run_container(
     image: str = typer.Option(),
     path: str = typer.Option(),
     password: str = typer.Option(),
+    username: str = typer.Option(),
 ):
-    command = write_docker_command(target, container, image, path, password)
+    command = write_docker_command(target, container, image, path, password, username)
     os.system(command)
 
 
