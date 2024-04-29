@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.1] - 2024-04-18
+## [0.1.0] - 2024-04-29
 
 ### Added
+
+- Command `run-container`
 
 ### Fixed
 
@@ -18,5 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 
-[unreleased]: https://github.com/IslasGECI/container_runner/compare/v1.1.1...HEAD
+[unreleased]: https://github.com/IslasGECI/container_runner/compare/HEAD...v0.1.0
+[0.1.0]: https://github.com/IslasGECI/container_runner/compare/v0.0.1...v0.1.0
 [0.0.1]: https://github.com/IslasGECI/container_runner/releases/tag/v0.0.1
