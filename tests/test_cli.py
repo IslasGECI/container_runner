@@ -22,6 +22,7 @@ def test_run_container():
     target = "mundo"
     path = "./hola/"
     password = "contraseña"
+    username = "usuario"
     result = runner.invoke(
         cli,
         [
@@ -36,6 +37,8 @@ def test_run_container():
             container,
             "--password",
             password,
+            "--username",
+            username,
         ],
     )
     assert result.exit_code == 0
