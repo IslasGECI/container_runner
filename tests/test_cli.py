@@ -40,15 +40,15 @@ def test_run_container():
     )
     assert result.exit_code == 0
     expected_string_command = 'docker run \
-    --env BITBUCKET_PASSWORD=$BITBUCKET_PASSWORD \
+    --env BITBUCKET_PASSWORD=contraseña \
     --env BITBUCKET_USERNAME=analislas \
-    --name $CONTENEDOR \
+    --name testmake_hola_develop \
     --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume $RUTA_CLON:/workdir \
-    $IMAGEN bash -c "\
+    --volume ./hola/:/workdir \
+    islasgeci/hola bash -c "\
       umask 000; \
-      make $OBJETIVO \
+      make mundo \
         && echo $(date) > .make_succeeded \
         || rm --force .make_succeeded"'
     assert expected_string_command in result.stdout

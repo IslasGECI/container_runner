@@ -12,7 +12,7 @@ def run_container(
     path: str = typer.Option(),
     password: str = typer.Option(),
 ):
-    return write_docker_command("", "", "", "", "")
+    print(write_docker_command(target, container, image, path, password))
 
 
 @cli.command()
