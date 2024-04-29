@@ -9,7 +9,13 @@ def test_run_container():
     result = runner.invoke(cli, "--help")
     assert result.exit_code == 0
 
-    # obtained = write_docker_command( container, path, password)
+    result = runner.invoke(
+        cli,
+        ["run-container", "--help"],
+    )
+
+    assert result.exit_code == 0
+
     image = "islasgeci/hola"
     container = "testmake_hola_develop"
     target = "mundo"
