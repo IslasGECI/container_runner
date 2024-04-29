@@ -15,6 +15,7 @@ def test_run_container():
     )
 
     assert result.exit_code == 0
+    assert "run-container" in result.stdout
 
     image = "islasgeci/hola"
     container = "testmake_hola_develop"
