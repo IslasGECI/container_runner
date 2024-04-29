@@ -51,4 +51,4 @@ def test_run_container():
       make $OBJETIVO \
         && echo $(date) > .make_succeeded \
         || rm --force .make_succeeded"'
-    # assert expected_string_command in result.stdout
+    assert expected_string_command in result.stdout
