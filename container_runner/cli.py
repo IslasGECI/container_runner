@@ -1,5 +1,6 @@
 from .container_run import write_docker_command
 import typer
+import os
 
 cli = typer.Typer()
 
@@ -12,7 +13,8 @@ def run_container(
     path: str = typer.Option(),
     password: str = typer.Option(),
 ):
-    print(write_docker_command(target, container, image, path, password))
+    command = write_docker_command(target, container, image, path, password)
+    os.system(command)
 
 
 @cli.command()
